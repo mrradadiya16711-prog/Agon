@@ -1,0 +1,75 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Sora", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+
+  /* Warm food-inspired palette */
+  --color-terracotta: #b85638;
+  --color-terracotta-dark: #9a4430;
+  --color-terracotta-soft: #d9876e;
+  --color-cream: #f7f1e6;
+  --color-cream-deep: #efe6d3;
+  --color-olive: #4a5a2b;
+  --color-olive-dark: #36431f;
+  --color-olive-soft: #6d7a45;
+  --color-saffron: #e8a23a;
+  --color-ink: #2a2521;
+  --color-ink-soft: #5a524a;
+  --color-paper: #fbf6ec;
+
+  --radius-xl: 1rem;
+  --radius-2xl: 1.5rem;
+  --radius-3xl: 2rem;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  background-color: var(--color-paper);
+  color: var(--color-ink);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: var(--color-terracotta);
+  color: var(--color-cream);
+}
+
+/* Subtle grain/texture overlay helper */
+.bg-grain {
+  background-image: radial-gradient(rgba(42, 37, 33, 0.045) 1px, transparent 1px);
+  background-size: 18px 18px;
+}
+
+/* Marquee animation for logo strip */
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+.animate-marquee {
+  animation: marquee 32s linear infinite;
+}
+
+/* Soft pulse for AI automation dots */
+@keyframes softpulse {
+  0%, 100% { opacity: 0.35; transform: scale(1); }
+  50% { opacity: 0.9; transform: scale(1.12); }
+}
+.animate-softpulse {
+  animation: softpulse 2.8s ease-in-out infinite;
+}
+
+/* Flow line for how-it-works */
+@keyframes flowdash {
+  to { stroke-dashoffset: -24; }
+}
+.animate-flowdash {
+  stroke-dasharray: 6 6;
+  animation: flowdash 1s linear infinite;
+}
